@@ -27,6 +27,9 @@
             this.querySelector('.thumb').style.border = '3px solid white';
             this.querySelector('.thumb').style.borderRadius = '3px';
 
+            this.querySelector('.bg-overlay').style.backgroundColor = this.getAttribute('backgroundcolor');
+          
+            this.querySelector('.thumb').style.marginLeft = this.getAttribute('value') + 'px';
         }
     }
     if (!customElements.get('wcia-slider')) {
@@ -39,6 +42,7 @@
     
     <wcia-slider onclick="alert('clicked')"></wcia-slider>
 
+    <wcia-slider backgroundcolor="#0000ff" value="180"></wcia-slider>
 </body>
 
 </html>
