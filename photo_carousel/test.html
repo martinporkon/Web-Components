@@ -1,6 +1,23 @@
 <html>
     <head>
         <title>Photo Carousel Demo</title>
+            <title>Photo Carousel</title>
+        
+            <script>
+                class PhotoCarousel extends HTMLElement {
+                    connectedCallback() {
+                        this.innerHTML = '<h2>'+ this.getAttribute('title') + '</h2>' +
+    '<h4>by '+ this.getAttribute('author') + '</h4>' +
+    '<div class="image-container"></div>' +
+    '<button class="back">&lt</button>' +
+    '<button class="forward">&gt</button>';
+                    }
+                }
+        
+                if (!customElements.get('wcia-photo-carousel')) {
+                    customElements.define('wcia-photo-carousel', PhotoCarousel);
+                }
+            </script>
     </head>
     <body>
         <h3>Hi, from your webserver</h3>
